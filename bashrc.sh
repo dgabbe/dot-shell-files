@@ -4,14 +4,21 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 #
-# The bash coding style is inconsistent because code snippets from various versions of bash
-# and authors are pulled together to create this file.
+# The bash coding style is inconsistent because code snippets from various
+# versions of bash and authors are pulled together to create this file.
 #
 
 #
+# The test for an interactive shell is frequently:
+#   [[ -z "$PS1" ]] && return
+#
+# However, an environment variable may be set by anyone.
+# Some marvelous code in RedHat and CentOS /etc/bashrc demonstrates this.
+# See this 1999 bug https://bugzilla.redhat.com/show_bug.cgi?id=678
+#
 # If not running interactively, don't do anything
 #
-[[ -z "$PS1" ]] && return
+[[ $- != *i* ]] && return
 
 #
 # set PATH so it includes user's private bin if it exists
@@ -26,24 +33,24 @@ fi
 # Somewhere between bash 4 -> 5 and MacOS 10.11 -> 10.13 the value of $HOSTNAME
 # changed. Switched to hostname command for better reliability.
 #
-my_profile=${HOME}/.`hostname -s`_${USER}_profile
+my_profile=${HOME}/.$(hostname -s)_${USER}_profile
 if [[ -e "${my_profile}" ]]
 then
   source ${my_profile}
 fi
-unset my_machine
+unset my_profile
 
 #
-# Set options using set or shopt or export listed alphabetically
+# Set options using set or shopt or export. Listed alphabetically.
 #
 
 shopt -s cdspell
 shopt -s checkwinsize # Update the values of LINES and COLUMNS after each command
 
- if [[ "${BASH_VERSINFO}" = "5" ]]
- then
-   shopt -s dirspell
- fi
+if [[ "${BASH_VERSINFO}" = "5" ]]
+then
+ shopt -s dirspell
+fi
 
 set -o emacs
 shopt -s histappend # Append to the history file, don't overwrite it
@@ -95,9 +102,9 @@ fi
 #
 # Add pip3 command completion if pip3 installed
 #
-if [[ `which pip3` != "" ]]
+if [[ $(which pip3) != "" ]]
 then
-  eval "`pip3 completion --bash`"
+  eval "$(pip3 completion --bash)"
 fi
 
 #

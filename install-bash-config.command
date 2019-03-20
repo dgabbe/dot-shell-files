@@ -35,9 +35,7 @@ if isfile(install_files):
 
 
 # Append host-user specific file if found
-my_profile = str.split(gethostname(), ".")[0] + "_" + getpass.getuser() + "_profile"
-if isfile(join(repo, str(my_profile + ".sh"))):
-    scripts.append([str("." + my_profile), str(my_profile + ".sh")])
+# Code moved to private repo
 
 for s in scripts:
     f = join(home, s[0])
