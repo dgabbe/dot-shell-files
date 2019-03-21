@@ -23,10 +23,9 @@
 #   - https://invisible-island.net/ncurses/ncurses.faq.html#xterm_256color
 #
 
-export GIT_PS1_SHOWDIRTYSTATE=1
-
-if [ -f ${HOME}/.git_completion ]; then
-    source ${HOME}/.git_completion
+if [ -f "${HOME}/.git_completion" ]; then
+    export GIT_PS1_SHOWDIRTYSTATE=1
+    source "${HOME}/.git_completion"
 fi
 
 _normal_txt=0

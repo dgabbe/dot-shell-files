@@ -12,7 +12,7 @@
 #     source ~/.profile
 # fi
 
-if [ -e ~/.bashrc ]
+if [[ -e ~/.bashrc ]]
 then
     source ~/.bashrc
 fi
