@@ -31,19 +31,19 @@ alias grepi='grep --color=auto -i'
 # some more ls aliases
 #
 # Decoder as some options are infrequently used
+#  A: Don't list . and .. entries
 #  a: Include directory entries whose names begin with a dot
-#  l: Long format - one per line
-#  F: Describe entry - /, *, @, =
+#  C: Force multi-column output
 #  d: Directories are listed as plain files (not searched recursively)
 #  e: Print the Access Control List (ACL) associated with the file
+#  F: Describe entry - /, *, @, =
 #  G: Enable colorized output
 #  h: use unit suffixes: Byte, Kilobyte, Megabyte, Gigabyte, Terabyte and Petabyte
-#  A: Don't list . and .. entries
-#  C: Force multi-column output
+#  l: Long format - one per line
 #  O: File flags
 #
 alias l='ls -CF'
-alias ld='ls -d'         # treat directory as a file
+alias lld='ls -dl'        # treat directory as a file
 alias la='ls -A'
 alias lf='ls -lOde'      # list permissions, flags, acls, extended attributes
 alias ll='ls -alFeGhO'

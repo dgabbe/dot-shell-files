@@ -23,6 +23,13 @@
 #   - https://invisible-island.net/ncurses/ncurses.faq.html#xterm_256color
 #
 
+#
+# Uncomment as needed.
+# CentOS defined PROMPT_COMMAND as a function which updated PS1,
+# overwriting the setting of PS1 below.
+#
+# unset PROMPT_COMMAND
+
 if [ -f "${HOME}/.git_completion" ]; then
     export GIT_PS1_SHOWDIRTYSTATE=1
     source "${HOME}/.git_completion"
@@ -38,7 +45,7 @@ _shell_level="[$SHLVL]"
 _wd="\[\e[${_bold_txt};3${_blue}m\]\w\[\e[0m\]"
 _eop="\n\$ "
 
-case `tput colors` in
+case $(tput colors) in
   16)
       ;&
   256)
