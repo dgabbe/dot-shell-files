@@ -30,10 +30,12 @@
 #
 # unset PROMPT_COMMAND
 
-if [ -f "${HOME}/.git_completion" ]; then
+_gp=$(brew --prefix git)/etc/bash_completion.d/git-prompt.sh
+if [[ -f ${_gp} ]]; then
     export GIT_PS1_SHOWDIRTYSTATE=1
-    source "${HOME}/.git_completion"
+    source ${_gp}
 fi
+unset _gp
 
 _normal_txt=0
 _bold_txt=1

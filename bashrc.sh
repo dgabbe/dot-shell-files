@@ -92,6 +92,12 @@ if [[ -f ${HOME}/.bash_aliases ]]; then
     source ${HOME}/.bash_aliases
 fi
 
+_gcb=$(brew --prefix git)/etc/bash_completion.d/git-completion.bash
+if [[ -f ${_gcb} ]]; then
+    source ${_gcb}
+fi
+unset _gcb
+
 #
 # Set prompt, window title, git status
 #
