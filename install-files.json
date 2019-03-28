@@ -16,10 +16,6 @@
         "bashrc.sh"
     ],
     [
-        ".git-completion",
-        "git-completion.bash"
-    ],
-    [
         ".profile",
         "profile.sh"
     ],
