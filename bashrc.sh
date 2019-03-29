@@ -117,16 +117,16 @@ fi
 #
 # load rvm
 #
-if [[ -s "${HOME}/.rvm/scripts/rvm" ]]; then
-  PATH=${PATH}:${HOME}/.rvm/bin # Add RVM to PATH for scripting
-  source "${HOME}/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-  # load git prompt
-  if [[ $- == *i* ]]
-  then
-    . ${HOME}/.rvm/contrib/ps1_functions
-    ps1_set --prompt \$
-  fi
-fi
+# if [[ -s "${HOME}/.rvm/scripts/rvm" ]]; then
+#   PATH=${PATH}:${HOME}/.rvm/bin # Add RVM to PATH for scripting
+#   source "${HOME}/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+#   # load git prompt
+#   if [[ $- == *i* ]]
+#   then
+#     . ${HOME}/.rvm/contrib/ps1_functions
+#     ps1_set --prompt \$
+#   fi
+# fi
 
 #
 # Stuff from Bosco's file, but not supported on OS X
