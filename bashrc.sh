@@ -58,6 +58,7 @@ export HISTCONTROL='ignoredups:ignorespace' # don't put duplicate lines in the h
 export HISTFILESIZE=2000
 shopt -s histreedit # If you bork a ! in bash, this lets you edit the line.
 export HISTSIZE=1000
+shopt -s histverify
 # opt out Homebrew analytics
 export HOMEBREW_NO_ANALYTICS=1
 #
