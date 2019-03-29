@@ -1,26 +1,26 @@
 [
     [
-        ".bash_aliases",
-        "bash_aliases.sh"
+        "bash_aliases.sh",
+        ".bash_aliases"
     ],
     [
-        ".bash_logout",
-        "bash_logout.sh"
+        "bash_logout.sh",
+        ".bash_logout"
     ],
     [
-        ".bash_profile",
-        "bash_profile.sh"
+        "bash_profile.sh",
+        ".bash_profile"
     ],
     [
-        ".bashrc",
-        "bashrc.sh"
+        "bashrc.sh",
+        ".bashrc"
     ],
     [
-        ".profile",
-        "profile.sh"
+        "profile.sh",
+        ".profile"
     ],
     [
-        ".set-ps1",
-        "set-ps1.sh"
+        "set-ps1.sh",
+        ".set-ps1"
     ]
 ]

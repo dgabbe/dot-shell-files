@@ -37,7 +37,7 @@ alias grepi='grep --color=auto -i'
 #  d: Directories are listed as plain files (not searched recursively)
 #  e: Print the Access Control List (ACL) associated with the file
 #  F: Describe entry - /, *, @, =
-#  G: Enable colorized output
+#  G: Enable colorized output. Set CLICOLOR instead
 #  h: use unit suffixes: Byte, Kilobyte, Megabyte, Gigabyte, Terabyte and Petabyte
 #  l: Long format - one per line
 #  O: File flags
@@ -46,7 +46,7 @@ alias l='ls -CF'
 alias lld='ls -dl'        # treat directory as a file
 alias la='ls -A'
 alias lf='ls -lOde'      # list permissions, flags, acls, extended attributes
-alias ll='ls -alFeGhO'
+alias ll='ls -alFehO'
 alias lx='xattr -lv'     # List the extended file attributes
 
 alias mkdirp='mkdir -m -go:rex' # The Apple way of keeping things private
