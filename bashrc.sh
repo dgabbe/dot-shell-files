@@ -45,7 +45,7 @@ unset my_profile
 #
 
 shopt -s cdspell
-shopt -s checkwinsize # Update the values of LINES and COLUMNS after each command
+shopt -s checkwinsize # Update LINES and COLUMNS after each command
 
 if [[ "${BASH_VERSINFO}" = "5" ]]
 then
@@ -58,8 +58,8 @@ export HISTCONTROL='ignoredups:ignorespace' # don't put duplicate lines in the h
 export HISTFILESIZE=2000
 shopt -s histreedit # If you bork a ! in bash, this lets you edit the line.
 export HISTSIZE=1000
-# opt out Homebrew analytics
-export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_ANALYTICS=1 # opt out Homebrew analytics
+
 #
 # Required to make MacTex compatible w/older versions of Ruby.
 # Deprecated in newer versions of Ruby and no longer a problem.
@@ -71,6 +71,7 @@ export LC_COLLATE='en_US.UTF-8'
 
 shopt -s nocaseglob # Case-insensitive wildcard matching.
 export PYTHONDONTWRITEBYTECODE=1 # No .pyc files
+
 ## !! There is bash_completion 2 for bash 4+ which should be added here ##
 ## Also look at Ned's https://github.com/nedbat/dot/blob/master/.bashrc, line 252
 ## if [[ $BASH_VERSINFO -ge 4 ]]; then ##
@@ -116,19 +117,19 @@ fi
 #
 # load rvm
 #
-if [[ -s "${HOME}/.rvm/scripts/rvm" ]]; then
-  PATH=${PATH}:${HOME}/.rvm/bin # Add RVM to PATH for scripting
-  source "${HOME}/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-  # load git prompt
-  if [[ $- == *i* ]]
-  then
-    . ${HOME}/.rvm/contrib/ps1_functions
-    ps1_set --prompt \$
-  fi
-fi
+# if [[ -s "${HOME}/.rvm/scripts/rvm" ]]; then
+#   PATH=${PATH}:${HOME}/.rvm/bin # Add RVM to PATH for scripting
+#   source "${HOME}/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+#   # load git prompt
+#   if [[ $- == *i* ]]
+#   then
+#     . ${HOME}/.rvm/contrib/ps1_functions
+#     ps1_set --prompt \$
+#   fi
+# fi
 
 #
 # Stuff from Bosco's file, but not supported on OS X
-#
 # make less more friendly for non-text input files, see lesspipe(1)
+#
 [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
