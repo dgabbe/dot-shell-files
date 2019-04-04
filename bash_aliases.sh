@@ -51,6 +51,9 @@ alias lx='xattr -lv'     # List the extended file attributes
 
 alias mkdirp='mkdir -m -go:rex' # The Apple way of keeping things private
 alias rmquar='xattr -rd com.apple.quarantine'  # Get applications out of Apple's quarantine
+alias u='cd ..'
+alias uu='cd ../..'
+alias uuu='cd ../../..'
 alias tagbrew='tag --add brew-installed /Applications/'
 
 #
