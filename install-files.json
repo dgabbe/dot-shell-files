@@ -22,5 +22,8 @@
     [
         "set-ps1.sh",
         ".set-ps1"
+    ],
+    [   "xresources",
+        ".Xresources"
     ]
 ]
