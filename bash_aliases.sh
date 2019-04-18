@@ -16,7 +16,10 @@ unset al
 
 alias gimp="/Applications/GIMP-2.10.app/Contents/MacOS/gimp" # for command line
 
-# These should work with any *nix. Uncomment the ones you want
+#
+# These should work with any *nix. Uncomment the ones you want.
+# CentOS uses a different scheme for colorizing ls output. Use
+# --color=tty and $LS_OPTIONS.
 #
 # Add an "alert" alias for long running commands.  Usage: sleep 10; alert
 #
@@ -42,11 +45,11 @@ alias grepi='grep --color=auto -i'
 #  l: Long format - one per line
 #  O: File flags
 #
-alias l='ls -CF'
-alias lld='ls -dl'        # treat directory as a file
+alias l='ls -ACF'
+alias lld='ls -AdFlh'        # treat directory as a file
 alias la='ls -A'
-alias lf='ls -lOde'      # list permissions, flags, acls, extended attributes
-alias ll='ls -alFehO'
+alias lf='ls -delO'      # list permissions, flags, acls, extended attributes
+alias ll='ls -AeFhlO'
 alias lx='xattr -lv'     # List the extended file attributes
 
 alias mkdirp='mkdir -m -go:rex' # The Apple way of keeping things private
