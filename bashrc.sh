@@ -70,6 +70,8 @@ export LC_MESSAGES='en_US.UTF-8'
 export LC_CTYPE='en_US.UTF-8'
 export LC_COLLATE='en_US.UTF-8'
 
+export LSCOLORS='Exfxcxdxbxegedabagacad'
+
 shopt -s nocaseglob # Case-insensitive wildcard matching.
 export PYTHONDONTWRITEBYTECODE=1 # No .pyc files
 

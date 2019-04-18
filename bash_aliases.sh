@@ -18,7 +18,7 @@ alias gimp="/Applications/GIMP-2.10.app/Contents/MacOS/gimp" # for command line
 
 #
 # These should work with any *nix. Uncomment the ones you want.
-# CentOS uses a different scheme for colorizing ls output. Use
+# CentOS uses dircolors for colorizing ls output. Use
 # --color=tty and $LS_OPTIONS.
 #
 # Add an "alert" alias for long running commands.  Usage: sleep 10; alert
@@ -31,7 +31,7 @@ alias dss='diff --side-by-side'
 alias fgrepi='fgrep --color=auto -i'
 alias grepi='grep --color=auto -i'
 
-# some more ls aliases
+# ls aliases
 #
 # Decoder as some options are infrequently used
 #  A: Don't list . and .. entries
