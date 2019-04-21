@@ -43,14 +43,12 @@ _blue=4
 _window_title="\[\e]0;\u@\h: \w\a\]"
 _user="\[\e[${_normal_txt};3${_blue}m\]\u\[\e[0m\]"
 _host="\[\e[${_normal_txt};3${_blue}m\]\h\[\e[0m\]"
-_shell_level="[$SHLVL]"
+_shell_level="[${SHLVL}]"
 _wd="\[\e[${_bold_txt};3${_blue}m\]\w\[\e[0m\]"
 _eop="\n\$ "
 
 case $(tput colors) in
-    16)
-        ;&
-    256)
+    16 | 256)
         export CLICOLOR=1
         export PS1=''${_window_title}''${_user}'@'${_host}''${_shell_level}': '${_wd}' $(__git_ps1 "(%s)")'${_eop}''
         export PS2="\[\e[0;3${_blue}m\]> "
