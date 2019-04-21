@@ -4,6 +4,8 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 #
+# Added support shellcheck - https://www.shellcheck.net/
+#
 # The bash coding style is inconsistent because code snippets from various
 # versions of bash and authors are pulled together to create this file.
 #
@@ -31,7 +33,7 @@
 # changed. Switched to hostname command for better reliability.
 #
 my_profile=${HOME}/.$(hostname -s)_${USER}_profile
-[[ -e "${my_profile}" ]] && source ${my_profile}
+[[ -e "${my_profile}" ]] && source "${my_profile}"
 unset my_profile
 
 #
@@ -83,6 +85,7 @@ fi
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 #
+# shellcheck source=~/.bash_aliases
 [[ -f ${HOME}/.bash_aliases ]] && source ${HOME}/.bash_aliases
 
 _gcb=$(brew --prefix git)/etc/bash_completion.d/git-completion.bash

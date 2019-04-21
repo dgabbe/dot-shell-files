@@ -8,13 +8,13 @@ mac_apps=("Aquamacs" "BBedit" "RStudio" "SourceTree")
 for a in "${mac_apps[@]}"
 do
   al=$(echo "$a" | tr [:upper:] [:lower:])
-  if [[ -e "/Applications/${a}.app" ]]; then alias ${al}="open -a /Applications/${a}.app"; fi
+  [[ -e "/Applications/${a}.app" ]] && alias ${al}="open -a /Applications/${a}.app"
 done
 unset mac_apps
 unset a
 unset al
 
-alias gimp="/Applications/GIMP-2.10.app/Contents/MacOS/gimp" # for command line
+alias gimp="open -a /Applications/GIMP-2.10.app/Contents/MacOS/gimp" # for command line
 
 #
 # These should work with any *nix. Uncomment the ones you want.
