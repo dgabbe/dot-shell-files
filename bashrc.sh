@@ -23,10 +23,7 @@
 #
 # set PATH so it includes user's private bin if it exists
 #
-if [[ -d "${HOME}/bin" ]]
-then
-    export PATH="${HOME}/bin:${PATH}"
-fi
+[[ -d "${HOME}/bin" ]] && export PATH="${HOME}/bin:${PATH}"
 
 #
 # Set CDPATH & machine specific environment variables and aliases if present.
@@ -34,10 +31,7 @@ fi
 # changed. Switched to hostname command for better reliability.
 #
 my_profile=${HOME}/.$(hostname -s)_${USER}_profile
-if [[ -e "${my_profile}" ]]
-then
-  source ${my_profile}
-fi
+[[ -e "${my_profile}" ]] && source ${my_profile}
 unset my_profile
 
 #
@@ -47,10 +41,7 @@ unset my_profile
 shopt -s cdspell
 shopt -s checkwinsize # Update LINES and COLUMNS after each command
 
-if [[ "${BASH_VERSINFO}" = "5" ]]
-then
- shopt -s dirspell
-fi
+[[ "${BASH_VERSINFO}" = "5" ]] && shopt -s dirspell
 
 set -o emacs
 shopt -s histappend # Append to the history file, don't overwrite it
@@ -92,30 +83,22 @@ fi
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 #
-if [[ -f ${HOME}/.bash_aliases ]]; then
-    source ${HOME}/.bash_aliases
-fi
+[[ -f ${HOME}/.bash_aliases ]] && source ${HOME}/.bash_aliases
 
 _gcb=$(brew --prefix git)/etc/bash_completion.d/git-completion.bash
-if [[ -f ${_gcb} ]]; then
-    source ${_gcb}
-fi
+[[ -f ${_gcb} ]] && source ${_gcb}
 unset _gcb
 
 #
 # Set prompt, window title, git status
 #
-if [[ -f ${HOME}/.set-ps1 ]]; then
-    source ${HOME}/.set-ps1
-fi
+[[ -f ${HOME}/.set-ps1 ]] && source ${HOME}/.set-ps1
 
 #
 # Add pip3 command completion if pip3 installed
 #
-if [[ $(which pip3) != "" ]]
-then
-  eval "$(pip3 completion --bash)"
-fi
+[[ -n $(which pip3) ]] && eval "$(pip3 completion --bash)"
+
 
 #
 # load rvm
