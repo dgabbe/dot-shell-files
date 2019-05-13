@@ -35,7 +35,7 @@ if isfile(install_files):
 
 
 # Append host-user specific file if found
-# Code moved to private repo
+# Code moved to dot-files-private repo
 src = 0
 trg = 1
 for s in scripts:
