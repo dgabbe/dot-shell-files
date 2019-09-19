@@ -10,3 +10,4 @@
 # want know if it is executed.
 
 printf '\n  OOPS! ~/.profile was unexpectedly executed.  Investigate why!\n\n'
+exit 1
