@@ -48,12 +48,12 @@ alias grepi='grep --color=auto -i'
 alias l='ls -ACF'
 alias lld='ls -AdFlh'        # treat directory as a file
 alias la='ls -A'
-alias lf='ls -delO'      # list permissions, flags, acls, extended attributes
+alias lf='ls -delO@'      # list permissions, flags, acls, extended attributes
 alias ll='ls -AeFhlO'
-alias lx='xattr -lv'     # List the extended file attributes
+alias lx='xattr -l'     # List the extended file attributes
 
 alias mkdirp='mkdir -m -go:rex' # The Apple way of keeping things private
-alias rmquar='xattr -rd com.apple.quarantine'  # Get applications out of Apple's quarantine
+alias rmquar='xattr -r com.apple.quarantine'  # Remove Apple's quarantine setting
 alias u='cd ..'
 alias uu='cd ../..'
 alias uuu='cd ../../..'
