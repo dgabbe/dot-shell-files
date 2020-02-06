@@ -53,7 +53,7 @@ alias ll='ls -AeFhlO'
 alias lx='xattr -l'     # List the extended file attributes
 
 alias mkdirp='mkdir -m -go:rex' # The Apple way of keeping things private
-alias rmquar='xattr -r com.apple.quarantine'  # Remove Apple's quarantine setting
+alias rmquar='xattr -d com.apple.quarantine'  # Remove Apple's quarantine setting
 alias u='cd ..'
 alias uu='cd ../..'
 alias uuu='cd ../../..'
