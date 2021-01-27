@@ -53,6 +53,7 @@ alias ll='ls -AeFhlO'
 alias lx='xattr -l'     # List the extended file attributes
 
 alias mkdirp='mkdir -m -go:rex' # The Apple way of keeping things private
+alias py3='python3'
 alias rmquar='/usr/bin/xattr -d com.apple.quarantine'  # Remove Apple's quarantine setting
 alias u='cd ..'
 alias uu='cd ../..'
@@ -65,4 +66,3 @@ alias tagbrew='tag --add brew-installed /Applications/'
 #alias path='ruby -e "puts ENV[\"PATH\"].gsub(/:/, \"\n\")"'
 #alias pretty_json='ruby -r json -e '\''txt = File.read(ARGV[0]); h = JSON.parse(txt); puts JSON.pretty_generate(h)'\'''
 #alias tabify='ruby -pe '\''gsub(/ +/, "\t")'\'''
-
