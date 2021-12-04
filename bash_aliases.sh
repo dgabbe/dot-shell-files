@@ -8,13 +8,13 @@ mac_apps=("Aquamacs" "BBedit" "RStudio" "SourceTree")
 for a in "${mac_apps[@]}"
 do
   al=$(echo "$a" | tr [:upper:] [:lower:])
-  if [[ -e "/Applications/${a}.app" ]]; then alias ${al}="open -a /Applications/${a}.app"; fi
+  [[ -e "/Applications/${a}.app" ]] && alias ${al}="open -a /Applications/${a}.app"
 done
 unset mac_apps
 unset a
 unset al
 
-alias gimp="/Applications/GIMP-2.10.app/Contents/MacOS/gimp" # for command line
+alias gimp="open -a /Applications/GIMP-2.10.app/Contents/MacOS/gimp" # for command line
 
 #
 # These should work with any *nix. Uncomment the ones you want.
@@ -48,12 +48,12 @@ alias grepi='grep --color=auto -i'
 alias l='ls -ACF'
 alias lld='ls -AdFlh'        # treat directory as a file
 alias la='ls -A'
-alias lf='ls -delO'      # list permissions, flags, acls, extended attributes
+alias lf='ls -delO@'      # list permissions, flags, acls, extended attributes
 alias ll='ls -AeFhlO'
-alias lx='xattr -lv'     # List the extended file attributes
+alias lx='xattr -l'     # List the extended file attributes
 
 alias mkdirp='mkdir -m -go:rex' # The Apple way of keeping things private
-alias rmquar='xattr -rd com.apple.quarantine'  # Get applications out of Apple's quarantine
+alias rmquar='xattr -d com.apple.quarantine'  # Remove Apple's quarantine setting
 alias u='cd ..'
 alias uu='cd ../..'
 alias uuu='cd ../../..'

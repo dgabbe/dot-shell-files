@@ -35,10 +35,11 @@ if isfile(install_files):
 
 
 # Append host-user specific file if found
-# Code moved to private repo
-
+# Code moved to dot-files-private repo
+src = 0
+trg = 1
 for s in scripts:
-    f = join(home, s[0])
+    f = join(home, s[trg])
 
     if isfile(f) and not islink(f):
         rename(f, f + ".org")
@@ -47,5 +48,5 @@ for s in scripts:
     if islink(f):
         print("\n    ", f, "is a sym link. No changes to make.")
     else:
-        symlink(path.join(repo, s[1]), f)
+        symlink(path.join(repo, s[src]), f)
         print("\n    ", f, "->", path.realpath(f))
