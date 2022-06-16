@@ -13,4 +13,5 @@
 # fi
 
 [[ -e ~/.bashrc ]] && source ~/.bashrc
+# setup Homebrew 3.x
 eval "$(/opt/homebrew/bin/brew shellenv)"
